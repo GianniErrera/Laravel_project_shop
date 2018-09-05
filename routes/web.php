@@ -33,3 +33,5 @@ Route::get('/prodotti/modifica/{id}', 'HomeController@edit');
 Route::post('/prodotti/modifica/{id}', 'ProdottoController@edit');
 
 Route::get('/categoria/nuova', 'CategoriaController@create');
+
+Route::post('/categoria/nuova', 'CategoriaController@store');
