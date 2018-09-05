@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-8 blog-main">
 
-<h1>Modifica orodotto</h1>	
+<h1>Modifica prodotto</h1>	
 <hr>
     <form method = "POST" action = "/prodotti/modifica/{{$prodotto->id}}">
 

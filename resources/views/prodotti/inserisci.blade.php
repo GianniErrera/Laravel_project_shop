@@ -11,7 +11,20 @@
 
   {{csrf_field()}}
 
+<div class="form-group">
+  <label for="nome">Categoria</label>
+    <select id = "categoria" class="custom-select" required>
+      <option value="">Scegli una categoria</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+  <div>
+  
+<h3><a href="/categoria/nuova">oppure crea una nuova categoria</a></h3>
 
+</div>
 <div class="form-group">
     <label for="nome">Nome</label><br/>
     <textarea id="nome" name = "nome" class = "form-control" placeholder='Nome' required></textarea> 
