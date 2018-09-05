@@ -17,7 +17,7 @@ class CreateProdottosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('marca');
-            $table->string('categoria');
+            $table->integer('id_categorias');
             $table->float('prezzo');
             $table->text('descrizione');
             $table->timestamps();
