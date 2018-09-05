@@ -17,7 +17,10 @@ class ProdottoController extends Controller
     // {
     //     $this->middleware('auth');
     // }
+    public function categoria() {
 
+        return $this->belongsTo(App\Categoria::class);
+    }
 
 
     public function show($id) {

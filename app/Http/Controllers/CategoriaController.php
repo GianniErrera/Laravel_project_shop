@@ -7,4 +7,9 @@ use Illuminate\Http\Request;
 class CategoriaController extends Controller
 {
     //
+	public function articolo() {
+
+        return $this->hasMany(App\Articolo::class);
+    }
+
 }
