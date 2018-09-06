@@ -8,5 +8,5 @@ class prodotto extends Model
 {
     //
 
-    protected $fillable = ['nome', 'marca', 'descrizione', 'categoria', 'prezzo'];
+    protected $fillable = ['nome', 'marca', 'descrizione', 'id_categorias', 'prezzo'];
 }

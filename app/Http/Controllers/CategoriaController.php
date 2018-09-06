@@ -33,20 +33,19 @@ class CategoriaController extends Controller
 
     public function store() {
 
-    		if ((Auth::user()->isAdmin) == 1) {
+    		if ((Auth::user()->isAdmin) != 1) {
+
+    			return redirect('home');
+    			// $prodotti = Prodotto::all();
+       //  return view('home', compact('prodotti'));
+
+    		 }
 
     			$categoria = new Categoria();
     			$categoria->nome = request('nome');
     			$categoria->save();
-    			return redirect('/categoria/nuova');
-
-
-            }
-         
-
-
-        $prodotti = Prodotto::all();
-        return view('home', compact('prodotti'));
+    			return redirect('/prodotti/inserisci');
+        
     }
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Prodotto;
+use App\Categoria;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Session;
@@ -53,7 +54,7 @@ class ProdottoController extends Controller
         // dd($prodotto);
         $prodotto->nome = request('nome');
         $prodotto->marca = request('marca');
-        $prodotto->categoria = request('categoria');
+        $prodotto->id_categorias = request('id_categoria');
         $prodotto->prezzo = request('prezzo');
         $prodotto->descrizione = request('descrizione');
         $prodotto->save();
@@ -87,23 +88,26 @@ class ProdottoController extends Controller
 
     public function store() {
 
-        $this->validate(request(), [
-            'nome' => 'required',
-            'marca' => 'required',
-            'categoria' => 'required',
-            'prezzo' => 'required',
-            'descrizione' => 'required'
+    //     $this->validate(request(), [
+    //         'nome' => 'required',
+    //         'marca' => 'required',
+    //         'categoria' => 'required',
+    //         'prezzo' => 'required',
+    //         'descrizione' => 'required'
 
-        ]);
+    //     ]);
 
-    $prodotti = Prodotto::all();
+    // $prodotti = Prodotto::all();
 
    
 
-            $prodotto = new Prodotto();    
+            $prodotto = new Prodotto(); 
+               
             $prodotto->nome = request('nome');
             $prodotto->marca = request('marca');
-            $prodotto->categoria = request('categoria');
+            $prodotto->id_categorias = request('id_categoria');
+
+          
             $prodotto->prezzo = request('prezzo');
             $prodotto->descrizione = request('descrizione');
 

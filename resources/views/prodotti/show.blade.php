@@ -16,6 +16,7 @@
                   <h4>{{$prodotto->marca}}</h4>
                   <h5>€{{$prodotto->prezzo}}</h5>
                   <p class="card-text">{{$prodotto->descrizione}}</p>
+{{--                   <p class="card-text">{{$prodotto->categoria->nome}}</p> --}}
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

@@ -3,28 +3,49 @@
 @section('content')
 
 
+
 <div class="col-md-8 blog-main">
 
 <h1>Inserisci un nuovo prodotto</h1> 
 <hr>
-    <form method = "POST" action = "/prodotti/inserisci">
+<form method = "POST" action = "/categoria/nuova">
 
   {{csrf_field()}}
 
+
 <div class="form-group">
-  <label for="nome">Categoria</label>
-    <select id = "categoria" class="custom-select" required>
-      <option value="">Scegli una categoria</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
+
+      <label for="nome">Crea nuova categoria</label><br/>
+    <textarea id="nome" name = "nome" class = "form-control" placeholder='Nome' required></textarea> 
   </div>
-  <div>
+
+  
+  <div class = "form-group">
+  <button type="submit" class="btn btn-primary">Inserisci</button>
+    </div>
+</form>
+<br/>
+    <form method = "POST" action = "/prodotti/inserisci">
+
+  {{csrf_field()}}
+<?php $categorie = \App\Categoria::orderBy('nome', 'asc')->get(); ?>
+<div class="form-group">
+  <label for="id_categoria">Scegli una categoria tra quelle esistenti</label>
+    <select id = "id_categoria" name = "id_categoria" class="custom-select" required>
+    
+      @foreach ($categorie as $categoria) 
+
+      <option value={{$categoria->id}}>{{$categoria->nome}}</option>
+      @endforeach
+         </select>
+  </div>
+
+
+{{--   <div>
   
 <h3><a href="/categoria/nuova">oppure crea una nuova categoria</a></h3>
 
-</div>
+</div> --}}
 <div class="form-group">
     <label for="nome">Nome</label><br/>
     <textarea id="nome" name = "nome" class = "form-control" placeholder='Nome' required></textarea> 
@@ -35,11 +56,11 @@
     <textarea id="marca" name = "marca" class = "form-control" placeholder='Marca' required></textarea> 
   </div>
 
-  <div class="form-group">
+{{--   <div class="form-group">
     <label for="categoria">Categoria</label><br/>
     <textarea id="categoria" name = "categoria" class = "form-control" placeholder='Categoria' required></textarea> 
   </div>
-
+ --}}
   <div class="form-group">
     <label for="prezzo">Prezzo</label><br/>
     <textarea id="prezzo" name = "prezzo" class = "form-control" placeholder='Prezzo' required></textarea> 
