@@ -10,10 +10,7 @@ use App\Prodotto;
 class CategoriaController extends Controller
 {
     //
-	public function articolo() {
 
-        return $this->hasMany(App\Articolo::class);
-    }
 
 
     public function create() {
@@ -40,6 +37,7 @@ class CategoriaController extends Controller
        //  return view('home', compact('prodotti'));
 
     		 }
+
 
     			$categoria = new Categoria();
     			$categoria->nome = request('nome');

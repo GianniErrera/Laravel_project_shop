@@ -91,8 +91,12 @@
                         @else <div class = "navbar-brand">
                         {{Auth::user()->name}}
                             @if (Auth::user()->isAdmin == 1) {{"-  Admin"}}</div>
+                            @else {{"- User"}}
                              @endif
+                            
+                           </div>
 
+                      
                         <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

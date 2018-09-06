@@ -18,10 +18,7 @@ class ProdottoController extends Controller
     // {
     //     $this->middleware('auth');
     // }
-    public function categoria() {
-
-        return $this->belongsTo(App\Categoria::class);
-    }
+   
 
 
     public function show($id) {
@@ -54,7 +51,7 @@ class ProdottoController extends Controller
         // dd($prodotto);
         $prodotto->nome = request('nome');
         $prodotto->marca = request('marca');
-        $prodotto->id_categorias = request('id_categoria');
+        $prodotto->categoria_id = request('id_categoria');
         $prodotto->prezzo = request('prezzo');
         $prodotto->descrizione = request('descrizione');
         $prodotto->save();
@@ -102,10 +99,10 @@ class ProdottoController extends Controller
    
 
             $prodotto = new Prodotto(); 
-               
+
             $prodotto->nome = request('nome');
             $prodotto->marca = request('marca');
-            $prodotto->id_categorias = request('id_categoria');
+            $prodotto->categoria_id = request('id_categoria');
 
           
             $prodotto->prezzo = request('prezzo');
