@@ -15,4 +15,6 @@ class prodotto extends Model
         return $this->belongsTo(Categoria::class);
     }
 
+    
+
 }

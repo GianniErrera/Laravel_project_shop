@@ -14,4 +14,15 @@ protected $fillable = ['nome'];
         return $this->hasMany(Prodotto::class);
     }
 
+
+
+    static function categorie() {
+
+		 return static::has('prodotto')->get();
+
+
+
+	}
+
+
 }
