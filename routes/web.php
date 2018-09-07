@@ -35,3 +35,5 @@ Route::post('/prodotti/modifica/{id}', 'ProdottoController@edit');
 Route::get('/categoria/nuova', 'CategoriaController@create');
 
 Route::post('/categoria/nuova', 'CategoriaController@store');
+
+Route::get('/categoria/{id}', 'CategoriaController@show');

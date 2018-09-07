@@ -10,7 +10,7 @@ use App\Prodotto;
 class CategoriaController extends Controller
 {
     //
-
+	
 
 
     public function create() {
@@ -43,6 +43,14 @@ class CategoriaController extends Controller
     			$categoria->nome = request('nome');
     			$categoria->save();
     			return redirect('/prodotti/inserisci');
+        
+    }
+
+
+    public function show($id) {
+
+    		$prodotti = Categoria::find($id)->prodotto;
+    		return view('categoria', compact('prodotti'));
         
     }
 

@@ -6,7 +6,7 @@
                   <h4 class="card-title">
                     <a href="/prodotti/{{$prodotto->id}}">{{$prodotto->nome}}</a>
                   </h4>
-                  <h4>{{$prodotto->marca}}
+                  <h4>{{$prodotto->marca}}</h4>
                   <h5>€{{$prodotto->prezzo}}</h5>
                   <p class="card-text">{{$prodotto->descrizione}}</p>
                 </div>
