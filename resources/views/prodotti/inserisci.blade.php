@@ -30,8 +30,8 @@
   {{csrf_field()}}
 <?php $categorie = \App\Categoria::orderBy('nome', 'asc')->get(); ?>
 <div class="form-group">
-  <label for="id_categoria">Scegli una categoria tra quelle esistenti</label>
-    <select id = "id_categoria" name = "id_categoria" class="custom-select" required>
+  <label for="categoria_id">Scegli una categoria tra quelle esistenti</label>
+    <select id = "categoria_id" name = "categoria_id" class="custom-select" required>
     
       @foreach ($categorie as $categoria) 
 

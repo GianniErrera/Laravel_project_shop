@@ -33,7 +33,7 @@ class ProdottoController extends Controller
     }
 
     
-    public function edit($id) {
+    public function edit($id, Request $request) {
        
         
         
@@ -46,25 +46,19 @@ class ProdottoController extends Controller
         //     request('descrizione') => 'required'
 
         // ]);
+        // dd($id, $request);
 
         $prodotto = Prodotto::find($id);
         // dd($prodotto);
         $prodotto->nome = request('nome');
         $prodotto->marca = request('marca');
-        $prodotto->categoria_id = request('id_categoria');
+        $prodotto->categoria_id = request('categoria_id');
         $prodotto->prezzo = request('prezzo');
         $prodotto->descrizione = request('descrizione');
         $prodotto->save();
 
         Session::flash('message', 'Prodotto modificato con successo!');
             return Redirect::action('HomeController@index');
-
-  
-
-
-
-
-          
 
     }
 
@@ -102,7 +96,7 @@ class ProdottoController extends Controller
 
             $prodotto->nome = request('nome');
             $prodotto->marca = request('marca');
-            $prodotto->categoria_id = request('id_categoria');
+            $prodotto->categoria_id = request('categoria_id');
 
           
             $prodotto->prezzo = request('prezzo');

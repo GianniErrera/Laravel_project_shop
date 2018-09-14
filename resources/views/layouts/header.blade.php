@@ -34,7 +34,7 @@
 
                 	<div class="container">
 
-                  <a class="navbar-brand" href="/home">Emporio da Gianni</a>
+                  <a class="navbar-brand" href="/home">Emporio da zio Gianni</a>
 
                     {{-- {{<a class="navbar-brand" href="{{redirect()->action('App\Http\Controllers\HomeController@home'}}">Emporio da Gianni</a>}} --}}
        

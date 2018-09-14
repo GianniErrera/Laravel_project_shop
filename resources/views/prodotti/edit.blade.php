@@ -35,10 +35,12 @@
   </div> --}}
 
   <?php $categorie = \App\Categoria::orderBy('nome', 'asc')->get(); ?>
+
 <div class="form-group">
-  <label for="id_categoria">Scegli una categoria tra quelle esistenti</label>
-    <select id = "id_categoria" name = "id_categoria" class="custom-select" required>
-    	<option value ={{$prodotto->id_categorias}}>{{\App\Categoria::find($prodotto->id_categorias)->nome}}</option>
+  <label for="categoria_id">Scegli una categoria tra quelle esistenti</label>
+    <select id = "categoria_id" name = "categoria_id" class="custom-select" required>
+
+    	<option value ={{$prodotto->categoria_id}}>{{\App\Categoria::find($prodotto->categoria_id)->nome}}</option>
     
       @foreach ($categorie as $categoria) 
 
