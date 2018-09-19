@@ -68,6 +68,6 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        \Mail::to($user)->send(new Welcome($user));
+        // \Mail::to($user)->send(new Welcome($user));
     }
 }
