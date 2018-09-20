@@ -176,6 +176,7 @@
     </div>
     <!-- /.container -->
  --}}
+ 
     @include('layouts.footer')
 
     <!-- Bootstrap core JavaScript -->

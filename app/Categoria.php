@@ -18,7 +18,7 @@ protected $fillable = ['nome'];
 
     static function categorie() {
 
-		 return static::has('prodotto')->get();
+		 return static::has('prodotto')->orderBy('nome', 'asc')->get();
 
 
 

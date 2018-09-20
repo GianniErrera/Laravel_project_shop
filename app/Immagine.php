@@ -1,0 +1,23 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Immagine extends Model
+{
+    //
+	protected $fillable = ['prodotto_id', 'immagine', 'peso'];
+
+	public function prodotto() {
+
+		return $this->belongsTo(Prodotto::class);
+
+
+	}
+
+
+
+
+
+}

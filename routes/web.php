@@ -37,3 +37,7 @@ Route::get('/categoria/nuova', 'CategoriaController@create');
 Route::post('/categoria/nuova', 'CategoriaController@store');
 
 Route::get('/categoria/{id}', 'CategoriaController@show');
+
+Route::get('/categoria/immagine/{id}', 'CategoriaController@immagine');
+
+Route::post('/copertina/carica/{id}', 'CategoriaController@copertina');

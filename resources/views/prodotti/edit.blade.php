@@ -74,6 +74,11 @@
     <textarea id="body" name = "descrizione" class = "form-control" placeholder={{$prodotto->descrizione}} required>{{$prodotto->descrizione}}</textarea> 
   </div>
 
+  <div class="form-group">
+    <label for="immagine">Immagine</label><br/>
+    <input type = "file" id="immagine" name = "immagine" class = "form-control"></textarea> 
+  </div>
+
   
   <hr>
   <div class = "form-group">
