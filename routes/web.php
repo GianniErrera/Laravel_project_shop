@@ -41,3 +41,7 @@ Route::get('/categoria/{id}', 'CategoriaController@show');
 Route::get('/categoria/immagine/{id}', 'CategoriaController@immagine');
 
 Route::post('/copertina/carica/{id}', 'CategoriaController@copertina');
+
+Route::get('/immagini/carica/{id}', 'ImmagineController@create');
+
+Route::post('/galleria/carica/{id}', 'ImmagineController@store');

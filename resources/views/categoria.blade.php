@@ -7,7 +7,7 @@
 <div class = "row">
 	@foreach ($prodotti as $prodotto)
 
-	@include('prodotti/prodotto')
+	@include('prodotti/prodotto_admin')
 
      @endforeach
 

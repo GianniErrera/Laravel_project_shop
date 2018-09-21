@@ -63,12 +63,17 @@ class CategoriaController extends Controller
     public function copertina($id) {
 
         $this->validate(request(),['copertina' => 'required|image|max:1999']);
-
+      
          $full_file_name = request('copertina')->getClientOriginalName();
          $extension = request('copertina')->getClientOriginalExtension();
          $new_file_name = $full_file_name. ('_').time().'.'.$extension;
          $path = request('copertina')->storeAs('public/copertine', $new_file_name); 
          session()->flash('message', 'Immagine caricata con successo');
+
+         $categoria = Categoria::find($id);
+         $categoria->copertina = $new_file_name;
+         $categoria->save();
+         
          return redirect()->back()->with('message', 'Immagine caricata con successo');
 
     }
