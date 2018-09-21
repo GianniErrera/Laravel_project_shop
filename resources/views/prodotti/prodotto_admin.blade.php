@@ -1,13 +1,20 @@
 
 <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-{{--                 @if ($prodotto->has('immagine'))
-                <a href= "#"><img class="card-img-top" src="/storage/{{$immagine->id}}/{{$immagine->immagine}}" alt=""></a> --}}
-{{--                 <a href = "#"><img class = 'card-img-top' src = "storage/{{$prodotto->id}}/{{$prodotto->immagine->first()"}} alt = "{{$prodotto->immagine->first()->descrizione}}"></a> --}}
-{{--                   @else --}}
-{{--                 <a href= "#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> --}}
-{{--                 @endif --}}
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                @if ($prodotto->has('immagine'))
+                <a href = "{{$prodotto->id}}/{{$prodotto->immagine->first()['immagine']}}">Link</a>
+                {{$prodotto->id}}
+              {{$prodotto->immagine->first()['immagine']}}
+  
+            
+ 
+                @else
+                 {{--               <a href= "/storage/public/{{$prodotto->id}}/{{$prodotto->immagine->first()['immagine']">
+  <img class="card-img-top" src="/storage/public/{{$prodotto->id}}/{{$prodotto->immagine->first()['immagine']}}" alt="{{$prodotto->immagine->first()['descrizione']}}"></a>
+  --}}
+                <a href= "#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                @endif
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> 
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="/prodotti/{{$prodotto->id}}">{{$prodotto->nome}}</a>

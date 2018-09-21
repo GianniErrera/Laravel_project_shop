@@ -11,17 +11,18 @@
 <br/>
 <br/>
 
-<form action = "/copertina/carica/{{$id}}" method = "POST" enctype = "multipart/form-data">
+<form action = "/galleria/carica/{{$id}}" method = "POST" enctype = "multipart/form-data">
 	{{csrf_field()}}
 	<label for "file">Scegli immagine da caricare come copertina per la categoria</label>
 	<br/>
 	<br/>	
-<input type = "file" name = "copertina" id = "copertina">
+<input type = "file" name = "immagine" id = "immagine">
 <br/>
 <br/>
+<label for "descrizione">Inserisci qui una descrizione - facoltativo</label>
+<textarea id = 'descrizione' name = 'descrizione' class = "form-control" placeholder = "Inserisci una descrizione"></textarea>
 <button type = "submit" class = "btn btn-primary">Carica copertina</button>
 </form>
-<br/>
 @include('layouts.alerts')
 </div>
 @endsection

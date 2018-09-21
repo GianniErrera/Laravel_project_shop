@@ -28,8 +28,9 @@
 
     <button type="submit" class="btn btn-primary">Inserisci copertina</button></form>
 </div>
+
 @endif
 
-   </div>
+ </div>
 
 @endsection

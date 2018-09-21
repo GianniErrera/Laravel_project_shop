@@ -23,7 +23,8 @@ class ImmagineController extends Controller
     	$id_prodotto = $id;
     	$peso = request('immagine')->getClientSize();
     	
-    	$nome_immagine = request('immagine')->getClientOriginalName();
+    	$nome_immagine = basename(request('immagine')->getClientOriginalName(), ".".request('immagine')->getClientOriginalExtension());
+    
     	$estensione = request('immagine')->getClientOriginalExtension();
     	$immagine_filename = $nome_immagine.'_'.time().'.'.$estensione;
     	$percorso = request('immagine')->storeAs('public/{{$id}}', $immagine_filename);
