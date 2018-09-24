@@ -1,11 +1,13 @@
 
 <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                @if ($prodotto->has('immagine'))
-                <a href = "{{$prodotto->id}}/{{$prodotto->immagine->first()['immagine']}}">Link</a>
+                @if ($prodotto->immagine->count())
+                {{$prodotto->id}}{{$prodotto->immagine->first()->immagine}}
+                <a href = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}"><img src = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}")>
+                </a>
+{{--                 <a href = "{{$prodotto->id}}/{{$prodotto->immagine->first()['immagine']}}">Link</a>
                 {{$prodotto->id}}
-              {{$prodotto->immagine->first()['immagine']}}
-  
+              {{$prodotto->immagine->first()['immagine']}} --}} 
             
  
                 @else
@@ -14,7 +16,7 @@
   --}}
                 <a href= "#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 @endif
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> 
+{{--                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> --}} 
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="/prodotti/{{$prodotto->id}}">{{$prodotto->nome}}</a>
@@ -49,10 +51,13 @@
                             <button type="submit" class="btn btn-primary">Aggiungi immagine</button>                          
                           </form>
                           </div>
+                          <br/>
+                        </div>
+                        <br/>
 
     
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                 </div>
-              </div>
+       
               	</div>

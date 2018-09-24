@@ -27,7 +27,7 @@ class ImmagineController extends Controller
     
     	$estensione = request('immagine')->getClientOriginalExtension();
     	$immagine_filename = $nome_immagine.'_'.time().'.'.$estensione;
-    	$percorso = request('immagine')->storeAs('public/{{$id}}', $immagine_filename);
+    	$percorso = request('immagine')->storeAs('public/'.$id_prodotto, $immagine_filename);
     	session()->flash('message', 'Immagine caricata con successo');
 
     	$immagine = new Immagine();

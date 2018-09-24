@@ -38,6 +38,7 @@ class CategoriaController extends Controller
 
     		 }
 
+                $this->validate(request(), ['nome'=>'required|unique']);
 
     			$categoria = new Categoria();
     			$categoria->nome = request('nome');
