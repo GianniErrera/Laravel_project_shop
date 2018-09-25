@@ -2,8 +2,8 @@
 <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
                 @if ($prodotto->immagine->count())
-                {{$prodotto->id}}{{$prodotto->immagine->first()->immagine}}
-                <a href = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}"><img src = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}")>
+                
+                <a href = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}"><img src = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}" width = "250")>
                 </a>
 {{--                 <a href = "{{$prodotto->id}}/{{$prodotto->immagine->first()['immagine']}}">Link</a>
                 {{$prodotto->id}}

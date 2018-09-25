@@ -11,9 +11,11 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                {{"/copertine/".$prodotti->first()->categoria->copertina}}
-                <img class="d-block img-fluid" src="/copertine/{{$prodotti->first()->categoria->copertina}}" alt="First slide">
-                }
+                @if ($prodotti->first()->categoria->copertina != null)
+                <img class="d-block img-fluid" src="/storage/copertine/{{$prodotti->first()->categoria->nome}}/{{$prodotti->first()->categoria->copertina}}" alt="First slide" width = '600'>
+                
+                @else <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                @endif
               </div>
               <div class="carousel-item">
                 <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">

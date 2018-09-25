@@ -69,8 +69,11 @@ class CategoriaController extends Controller
 
          $extension = request('copertina')->getClientOriginalExtension();
          $new_file_name = $file_name. ('_').time().'.'.$extension;
+         $nome_categoria = Categoria::find($id)->nome;
+
+
          // dd($new_file_name);
-         $path = request('copertina')->storeAs('public/copertine', $new_file_name); 
+         $path = request('copertina')->storeAs('public/copertine/'.$nome_categoria, $new_file_name); 
          session()->flash('message', 'Immagine caricata con successo');
 
          $categoria = Categoria::find($id);
