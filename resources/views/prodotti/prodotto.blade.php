@@ -2,8 +2,9 @@
 
 <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                @if ($prodotto->immagine->count())
-                <a href = "/storage/{{$prodotto->immagine->first()->immagine" src = "/storage/{{$prodotto->immagine->first()->immagine}}
+                 @if ($prodotto->immagine->count())                
+                <a href = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}"><img src = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}" width = "250")>
+                </a>
                   @else
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 @endif

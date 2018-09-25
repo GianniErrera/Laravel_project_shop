@@ -8,7 +8,12 @@
 	<div class="col-lg-9">
            {{--    <div class="card h-200" style = "width:75%;" > --}}
            	<div class = "container">
+               @if ($prodotto->immagine->count())                
+                <a href = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}"><img src = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}" width = "400")>
+                </a>
+                @else
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                @endif
                 <div class="card-body">
                   <h4 class="card-title">
                     {{$prodotto->nome}}
@@ -16,13 +21,22 @@
                   <h4>{{$prodotto->marca}}</h4>
                   <h5>€{{$prodotto->prezzo}}</h5>
                   <p class="card-text">{{$prodotto->descrizione}}</p>
-                    @if(isset($prodotto->categoria->nome)): 
+                  <div class = "containter">
+                  @foreach ($prodotto->immagine as $immagine)
+
+                  <a href = "/storage/{{$prodotto->id}}/{{$immagine->immagine}}"><img src = "/storage/{{$prodotto->id}}/{{$immagine->immagine}}" width = "250")></a>
+
+                    @endforeach
+                    </div>  
+
+
+{{--                     @if(isset($prodotto->categoria->nome)): 
 
      {{"OK"}}
    @else
 
      {{'empty'}}
-   @endif
+   @endif --}}
 
 {{--       --}}
                 </div>
