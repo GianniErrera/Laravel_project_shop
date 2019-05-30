@@ -22,6 +22,7 @@ class ImmagineController extends Controller
 
     	$id_prodotto = $id;
     	$peso = request('immagine')->getClientSize();
+        //if get
     	
     	$nome_immagine = basename(request('immagine')->getClientOriginalName(), ".".request('immagine')->getClientOriginalExtension());
     
@@ -37,9 +38,6 @@ class ImmagineController extends Controller
     	$immagine->immagine = $immagine_filename;
     	$immagine->save();
     	return redirect()->back();
-
-
-
 
 
 

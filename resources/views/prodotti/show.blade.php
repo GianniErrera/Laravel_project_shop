@@ -9,7 +9,7 @@
            {{--    <div class="card h-200" style = "width:75%;" > --}}
            	<div class = "container">
                @if ($prodotto->immagine->count())                
-                <a href = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}"><img src = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}" width = "400")>
+                <a href = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}"><img src = "/storage/{{$prodotto->id}}/{{$prodotto->immagine->first()->immagine}}" width = "400">
                 </a>
                 @else
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
